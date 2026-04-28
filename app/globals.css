@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/*
+  Murphy Tech Studio — dark theme
+  Brand: #FFFFFF · #E4E1E1 · #343633 + deep bases #121413 · #1F211F · #0B0C0C
+*/
+:root {
+  --mts-deep: #0b0c0c;
+  --mts-canvas: #121413;
+  --mts-surface: #1f211f;
+  --mts-raised: #252724;
+  --mts-charcoal: #343633;
+  --mts-ink: #ffffff;
+  --mts-subtle: #e4e1e1;
+  --mts-muted: #9a9896;
+  --mts-line: rgba(255, 255, 255, 0.09);
+  --mts-line-strong: rgba(255, 255, 255, 0.14);
+  /* Accent: soft light for labels / focus (on-brand with #E4E1E1) */
+  --mts-accent: #e8e6e4;
+  --mts-accent-soft: #c4c2c0;
+}
+
+@theme inline {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --color-mts-deep: var(--mts-deep);
+  --color-mts-canvas: var(--mts-canvas);
+  --color-mts-surface: var(--mts-surface);
+  --color-mts-raised: var(--mts-raised);
+  --color-mts-charcoal: var(--mts-charcoal);
+  --color-mts-ink: var(--mts-ink);
+  --color-mts-subtle: var(--mts-subtle);
+  --color-mts-muted: var(--mts-muted);
+  --color-mts-line: var(--mts-line);
+  --color-mts-accent: var(--mts-accent);
+  --color-mts-accent-soft: var(--mts-accent-soft);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--mts-canvas);
+  color: var(--mts-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--mts-subtle) 28%, transparent);
+}
+
+/* Merged hero: circular bokeh — blurred brand-tinted blobs (no diagonal bands) */
+.mts-bokeh-root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background-color: var(--mts-deep);
+  background-image: radial-gradient(
+    ellipse 120% 80% at 50% 100%,
+    color-mix(in oklab, var(--mts-canvas) 78%, var(--mts-deep)) 0%,
+    var(--mts-deep) 52%
+  );
+}
+
+.mts-bokeh-blob {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+@keyframes mts-bokeh-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(9vw, -6vh) scale(1.14);
+  }
+  66% {
+    transform: translate(-7vw, 7vh) scale(0.9);
+  }
+}
+
+@keyframes mts-bokeh-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    transform: translate(-8vw, 8vh) scale(1.16);
+  }
+  75% {
+    transform: translate(10vw, 4vh) scale(0.88);
+  }
+}
+
+@keyframes mts-bokeh-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(6vw, -9vh) scale(1.18);
+  }
+}
+
+@keyframes mts-bokeh-d {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-9vw, -5vh) scale(1.1);
+  }
+  50% {
+    transform: translate(8vw, 9vh) scale(0.86);
+  }
+  75% {
+    transform: translate(5vw, -7vh) scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mts-bokeh-blob {
+    animation: none !important;
+  }
+}

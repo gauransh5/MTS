@@ -1,0 +1,54 @@
+diff --git a/node_modules/framer-motion/dist/cjs/index.js b/node_modules/framer-motion/dist/cjs/index.js
+index 660b9cd..f090c70 100644
+--- a/node_modules/framer-motion/dist/cjs/index.js
++++ b/node_modules/framer-motion/dist/cjs/index.js
+@@ -131,11 +131,9 @@ function PopChild({ children, isPresent, anchorX, anchorY, root, pop }) {
+     });
+     const { nonce } = React.useContext(featureBundle.MotionConfigContext);
+     /**
+-     * In React 19, refs are passed via props.ref instead of element.ref.
+-     * We check props.ref first (React 19) and fall back to element.ref (React 18).
++     * React 19: ref lives on props only; accessing element.ref warns/errors.
+      */
+-    const childRef = children.props?.ref ??
+-        children?.ref;
++    const childRef = children.props?.ref;
+     const composedRef = useComposedRefs(ref, childRef);
+     /**
+      * We create and inject a style block so we can apply this explicit
+diff --git a/node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs b/node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs
+index 3f49ba7..8c6bc73 100644
+--- a/node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs
++++ b/node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs
+@@ -53,11 +53,9 @@ function PopChild({ children, isPresent, anchorX, anchorY, root, pop }) {
+     });
+     const { nonce } = useContext(MotionConfigContext);
+     /**
+-     * In React 19, refs are passed via props.ref instead of element.ref.
+-     * We check props.ref first (React 19) and fall back to element.ref (React 18).
++     * React 19: ref lives on props only; accessing element.ref warns/errors.
+      */
+-    const childRef = children.props?.ref ??
+-        children?.ref;
++    const childRef = children.props?.ref;
+     const composedRef = useComposedRefs(ref, childRef);
+     /**
+      * We create and inject a style block so we can apply this explicit
+diff --git a/node_modules/framer-motion/dist/framer-motion.dev.js b/node_modules/framer-motion/dist/framer-motion.dev.js
+index 3c30ec5..6c7a1ab 100644
+--- a/node_modules/framer-motion/dist/framer-motion.dev.js
++++ b/node_modules/framer-motion/dist/framer-motion.dev.js
+@@ -10245,11 +10245,9 @@
+         });
+         const { nonce } = React$1.useContext(MotionConfigContext);
+         /**
+-         * In React 19, refs are passed via props.ref instead of element.ref.
+-         * We check props.ref first (React 19) and fall back to element.ref (React 18).
++         * React 19: ref lives on props only; accessing element.ref warns/errors.
+          */
+-        const childRef = children.props?.ref ??
+-            children?.ref;
++        const childRef = children.props?.ref;
+         const composedRef = useComposedRefs(ref, childRef);
+         /**
+          * We create and inject a style block so we can apply this explicit
