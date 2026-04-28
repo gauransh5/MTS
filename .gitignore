@@ -34,3 +34,7 @@ yarn-error.log*
 .dev.vars
 .wrangler/
 .open-next/
+
+.dev.vars*
+!.dev.vars.example
+!.env.example
