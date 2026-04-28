@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { HeroBokeh } from "@/components/hero-bokeh";
+import { ScrollChevron } from "@/components/scroll-chevron";
 import { logoHeaderSrc } from "@/lib/branding";
 import { siteNavLinks } from "@/lib/site-nav";
 
 export function MergedHero() {
   return (
-    <section className="relative isolate flex min-h-[min(92dvh,880px)] flex-col overflow-hidden bg-mts-deep pb-16 pt-5 md:min-h-[min(88dvh,820px)] md:pb-24 md:pt-7">
+    <section className="relative isolate flex min-h-dvh flex-col overflow-hidden bg-mts-deep pb-16 pt-5 md:pb-24 md:pt-7">
       <HeroBokeh />
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_-5%,color-mix(in_oklab,var(--mts-ink)_6%,transparent),transparent_50%)]"
@@ -39,7 +40,7 @@ export function MergedHero() {
             />
           </Link>
 
-          <nav className="hidden items-center gap-7 text-sm font-medium text-white/55 md:flex lg:gap-9">
+          <nav className="hidden items-center gap-7 text-[0.9375rem] font-medium text-white/55 md:flex lg:gap-9">
             {siteNavLinks.map((item) => (
               <Link
                 key={item.href}
@@ -49,6 +50,13 @@ export function MergedHero() {
                 {item.label}
               </Link>
             ))}
+            <span className="text-white/20" aria-hidden>·</span>
+            <Link
+              href="/murphy-quotes"
+              className="italic text-white/40 transition-colors hover:text-white/75"
+            >
+              See what we ship →
+            </Link>
           </nav>
 
           <Link
@@ -88,6 +96,8 @@ export function MergedHero() {
           </Link>
         </div>
       </div>
+
+      <ScrollChevron />
     </section>
   );
 }

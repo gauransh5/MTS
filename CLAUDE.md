@@ -21,6 +21,21 @@ Short pointer for **Claude** (including **Claude Code**) working in this repo. D
 - Prefer **`mts-*`** Tailwind tokens from **`app/globals.css`** over ad-hoc hex.
 - New animation: use **`useReducedMotion()`** in client components; mirror critical CSS with **`prefers-reduced-motion`** where applicable.
 
+## Navbar consistency rule
+
+Every page on this site must have a nav with the **same links and CTA**. When editing the nav on any page, apply the same change to all other pages.
+
+| Page | Nav file |
+|------|----------|
+| `/` (homepage) | `components/merged-hero.tsx` — nav inside `MergedHero` |
+| `/murphy-quotes` | `app/murphy-quotes/page.tsx` — nav inside `MergedHero` |
+
+**Current nav shape (must stay in sync):**
+- **Logo:** `h-[6.375rem] w-[6.375rem] sm:h-[7.5rem] sm:w-[7.5rem] md:h-[7.875rem] md:w-[7.875rem]` — same on every page.
+- **Links:** `gap-7 text-[0.9375rem] font-medium text-white/55 lg:gap-9` — `/#services` · `/#work` · `/#process` · `/#contact` · `·` · *See what we ship →* (`/murphy-quotes`, italic, muted — homepage only)
+- **CTA button:** `border-white/25 bg-transparent px-4 py-2 text-sm font-medium md:px-5` — `Let's talk` → `/#contact`
+- On `/murphy-quotes`: breadcrumb `/ Murphy Quotes` replaces the italic product link; all other links and sizes identical.
+
 ## Out of scope today
 
 No database, auth layer, or API routes in the described architecture — adding them is a deliberate expansion.

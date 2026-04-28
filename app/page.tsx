@@ -6,7 +6,7 @@ import {
   TestimonialsSection,
   WorkSection,
 } from "@/components/sections";
-import { FramerCtaButton, FramerProjectRow } from "@/components/framer-blocks";
+import { FramerCtaButton } from "@/components/framer-blocks";
 import { MergedHero } from "@/components/merged-hero";
 import { RevealFromRight } from "@/components/scroll-reveal";
 
@@ -24,12 +24,7 @@ export default function Home() {
         <RevealFromRight>
           <WorkSection />
         </RevealFromRight>
-        <RevealFromRight>
-          <div className="mx-auto max-w-6xl px-5 pb-20 md:pb-28">
-            <FramerProjectRow />
-          </div>
-        </RevealFromRight>
-        <RevealFromRight>
+<RevealFromRight>
           <ProcessSection />
         </RevealFromRight>
         <RevealFromRight>
@@ -45,10 +40,7 @@ export default function Home() {
         </RevealFromRight>
       </main>
       <footer className="border-t border-mts-line bg-mts-deep py-10 text-center text-sm text-mts-muted">
-        <p>
-          © {new Date().getFullYear()} Murphy Tech Studio. Built with Next.js &
-          Framer export components.
-        </p>
+        <p>© {new Date().getFullYear()} Murphy Tech Studio. All rights reserved.</p>
       </footer>
     </>
   );

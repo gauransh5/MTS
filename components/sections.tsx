@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { FramerAccentIcon } from "./framer-blocks";
 import { CalEmbed } from "./cal-embed";
 
@@ -71,29 +72,73 @@ export function WorkSection() {
           We&apos;re a focused studio—each engagement gets our full attention.
           Here&apos;s a recent example.
         </p>
-        <div className="mt-10 inline-flex items-center gap-2 rounded-full border border-mts-line bg-mts-surface px-3 py-1 text-xs font-medium tracking-wide text-mts-subtle">
-          Concrete &amp; trades · Perth, WA
-        </div>
-        <div className="mt-4 max-w-2xl">
-          <h3 className="font-[family-name:var(--font-display)] text-xl text-mts-ink">
-            True Grit Concrete Group — Quote &amp; Estimation Tool
-          </h3>
-          <p className="mt-2 text-sm leading-relaxed text-mts-muted">
-            Built for True Grit Concrete Group, a Perth contractor running
-            exposed aggregate, polished concrete, and driveway jobs across the
-            metro area. Replaced ad-hoc spreadsheets with structured line-item
-            templates per service type, version history, and client-facing PDF
-            export—so the team tracks active jobs and sends professional quotes
-            without chasing files.
-          </p>
+        <div className="mt-10 grid gap-8 md:grid-cols-2">
+          {/* True Grit */}
           <a
             href="https://www.truegritconcretegroup.com.au"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-2 rounded-full border border-mts-line bg-mts-surface px-4 py-2 text-sm font-medium text-mts-subtle transition hover:border-white/20 hover:text-mts-ink"
+            className="group overflow-hidden rounded-2xl border border-mts-line bg-mts-surface transition hover:border-white/20"
           >
-            Visit live site
-            <span aria-hidden>↗</span>
+            <div className="relative h-44 w-full overflow-hidden bg-mts-raised">
+              <Image
+                src="/products/true-grit/preview.png"
+                alt="True Grit Concrete Group — website preview"
+                fill
+                className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-mts-surface via-transparent to-transparent" />
+            </div>
+            <div className="p-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-mts-line bg-mts-raised px-3 py-1 text-xs font-medium tracking-wide text-mts-subtle">
+                Concrete &amp; trades · Perth, WA
+              </div>
+              <h3 className="mt-4 font-[family-name:var(--font-display)] text-xl text-mts-ink">
+                True Grit Concrete Group — Quote &amp; Estimation Tool
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-mts-muted">
+                Replaced ad-hoc spreadsheets with structured line-item templates,
+                version history, and client-facing PDF export — so the team sends
+                professional quotes without chasing files.
+              </p>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-mts-subtle transition group-hover:text-mts-ink">
+                Visit live site
+                <span aria-hidden>↗</span>
+              </span>
+            </div>
+          </a>
+
+          {/* Murphy Quotes product */}
+          <a
+            href="/murphy-quotes"
+            className="group overflow-hidden rounded-2xl border border-mts-line bg-mts-surface transition hover:border-white/20"
+          >
+            <div className="relative h-44 w-full overflow-hidden bg-mts-raised">
+              <Image
+                src="/products/murphy-quotes/dashboard.png"
+                alt="Murphy Quotes — sales dashboard"
+                fill
+                className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-mts-surface via-transparent to-transparent" />
+            </div>
+            <div className="p-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-mts-line bg-mts-raised px-3 py-1 text-xs font-medium tracking-wide text-mts-subtle">
+                Quoting software · all service businesses
+              </div>
+              <h3 className="mt-4 font-[family-name:var(--font-display)] text-xl text-mts-ink">
+                Murphy Quotes — End-to-End Quoting System
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-mts-muted">
+                Send branded quotes, get e-signatures, track every deal in a
+                live dashboard. Built for trades, security, consulting, and any
+                service business still quoting from spreadsheets.
+              </p>
+              <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-mts-subtle transition group-hover:text-mts-ink">
+                See all features
+                <span aria-hidden>→</span>
+              </span>
+            </div>
           </a>
         </div>
       </div>
@@ -185,7 +230,7 @@ export function TestimonialsSection() {
               with and actually understood what we needed.&rdquo;
             </blockquote>
             <figcaption className="mt-8 text-sm text-mts-muted">
-              <span className="font-medium text-mts-ink">Jossa (Dawinder)</span>
+              <span className="font-medium text-mts-ink">Dawinder</span>
               <span className="block">True Grit Concrete Group, Perth WA</span>
             </figcaption>
           </figure>
