@@ -29,3 +29,8 @@ yarn-error.log*
 
 # env
 .env*.local
+
+# cloudflare / wrangler
+.dev.vars
+.wrangler/
+.open-next/
