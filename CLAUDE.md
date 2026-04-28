@@ -1,6 +1,6 @@
 # Claude / Claude Code — project context
 
-Short pointer for **Claude** (including **Claude Code**) working in this repo. Detailed technical reference: **[`docs/AGENTS.md`](docs/AGENTS.md)**. UX, copy, and visual design: **[`docs/UX-DESIGN.md`](docs/UX-DESIGN.md)**.
+Short pointer for **Claude** (including **Claude Code**) working in this repo. Detailed technical reference: **[`docs/AGENTS.md`](docs/AGENTS.md)**. UX, copy, and visual design: **[`docs/UX-DESIGN.md`](docs/UX-DESIGN.md)**. Deployment: **[`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)**.
 
 ## Quick facts
 
