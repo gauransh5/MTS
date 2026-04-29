@@ -47,12 +47,13 @@ export function CalEmbed() {
     Cal("init", "30min", { origin: "https://app.cal.eu" });
     Cal.ns["30min"]("inline", {
       elementOrSelector: "#my-cal-inline-30min",
-      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "dark" },
       calLink: "gauransh5/30min",
     });
     Cal.ns["30min"]("ui", {
       hideEventTypeDetails: false,
       layout: "month_view",
+      theme: "dark",
     });
   }, []);
 
